@@ -1,7 +1,6 @@
 require('dotenv').config();
 const template = require('./email_template/');
 const callbacks = require('../function/index.js');
-const secret = process.env.SECRET;
 
 const sgMail = require('@sendgrid/mail');
 // set api key

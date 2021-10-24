@@ -1,22 +1,4 @@
 module.exports ={
-	async fetchSingle(modelName, val){
-
-		return await modelName.findAll({
-			where:{
-				id:val
-			}
-		})
-	},
-
-	async statistics(modelName, obj){
-		return await modelName.count({
-			where:obj
-		})
-	},
-	async overall(modelName){
-		return await modelName.count({})
-	},
-
 	async findOne(modelName, obj){
 
 		return await modelName.findOne({
@@ -38,22 +20,6 @@ module.exports ={
 		return await modelName.findAll({
 			where:obj
 		})
-	},
-
-	async transform(name){
-		var fullname = name;
-		var splitName = fullname.split(' ');
-		var newName = "";
-
-		for (var i = 0; i < splitName.length; i++) {
-			newName += ' '+splitName[i].charAt(0).toUpperCase() + splitName[i].slice(1);
-			if(i == 0){
-
-				newName = newName.trim();
-			}
-		}
-
-		return  newName;
 	},
 
 	async currentYear(){

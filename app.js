@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: false }));
 const server = http.createServer(app);
 
 
-// Express Validtor Middleware
+// Express Validator Middleware
 app.use(expressValidator({
   errorFormatter: function (param, msg, value) {
     var namespace = param.split('.')
@@ -66,11 +66,9 @@ app.get('/swagger.json', (req, res) => {
 });
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-let basicApi = require('./routes/api/basic');
-let adminApi = require('./routes/api/admin');
-let userApi = require('./routes/api/user');
+let studentApi = require('./routes/api/student');
 
-app.use('/api/v1', basicApi, adminApi, userApi);
+app.use('/api/v1', studentApi);
 
 // set port
 const port = process.env.PORT || 5000;
