@@ -10,3 +10,7 @@ A Simple Dockerized Student Management application.
  $ sequelize db:seed:all
  $ npm run dev
 ```
+
+## Documentation Using Open API
+
+  http://localhost:5000/api-docs
