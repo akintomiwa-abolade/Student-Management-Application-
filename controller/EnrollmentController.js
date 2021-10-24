@@ -83,15 +83,20 @@ class EnrollmentController{
 			let student_id = req.decoded.user.id;
 
 			Enrollment.findAll({
-				where: {student_id: student_id},
-				attributes: ['student_id','course_name','registration_date']
+				where: {student_id: student_id}
 			}).then(async (courses)=>{
 				if(courses){
 					let data = [];
-					for (let i = 0; i < courses.length; i++) {
-						data[i]['registration_date'] = moment(courses[i].createdAt, "YYYY-MM-DD h:mm:ss:a").fromNow();
-						data.push(courses[i].dataValues);
-					}
+					courses.forEach((item)=>{
+						let createdAt = moment(item.createdAt).format('DD/MM/YYYY');
+							var obj = {
+								student_id:item.student_id,
+								course_name:item.course_name,
+								registration_date:createdAt.toUpperCase()
+							}
+
+						data.push(obj);
+					});
 					return res.status(200).json({
 						enrollments: data,
 						status:"SUCCESS",
