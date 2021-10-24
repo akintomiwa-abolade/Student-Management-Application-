@@ -29,16 +29,6 @@ module.exports ={
 	    return year;
 	},
 
-	async randomStr(numLength){
-	   var result  = '';
-	   var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-	   var charactersLength = characters.length;
-	   for ( var i = 0; i < numLength; i++ ) {
-	      result += characters.charAt(Math.floor(Math.random() * charactersLength));
-	   }
-	   return result;
-	},
-
 	async randomNum(numLength){
 	   var result  = '';
 	   var characters = '0123456789';

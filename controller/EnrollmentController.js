@@ -6,11 +6,9 @@
 |----------------------------------------------
 */
 const callbacks = require('../function/index.js');
-const Enrollment = require('../database/models/enrollment');
+const Enrollment = require('../database/models/').Enrollment;
 const moment = require('moment');
-const Course = require('../database/models/course');
-const Sequelize = require('sequelize');
-const Op = Sequelize.Op;
+const Course = require('../database/models/').Course;
 
 require('dotenv').config();
 

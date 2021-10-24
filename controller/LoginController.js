@@ -8,7 +8,7 @@
 */
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const Student = require('../database/models/student');
+const Student = require('../database/models/').Student;
 const formvalidator = require('../middlewares/formvalidator');
 
 require('dotenv').config();

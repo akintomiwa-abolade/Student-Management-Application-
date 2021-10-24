@@ -8,8 +8,9 @@
 */
 const bcrypt = require('bcryptjs');
 const callbacks = require('../function/index.js');
-const Student = require('../database/models/student');
+const Student = require('../database/models/').Student;
 const formvalidator = require('../middlewares/formvalidator');
+const Mailer = require('../middlewares/mail.js');
 require('dotenv').config();
 
 class RegisterController {
