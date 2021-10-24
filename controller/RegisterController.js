@@ -109,14 +109,13 @@ class RegisterController {
 			// collect data
 			let {email, otp} = req.body;
 
-			// validate entry
+			// validate entries
 			let rules = {
 				'email':'required',
 				'otp':'required'
 			};
 
 			let validator = formvalidator(req, rules);
-
 			if(validator){
 				return res.status(203).json({
 					error:true,
@@ -126,7 +125,6 @@ class RegisterController {
 
 			// check for otp
 			let validateOTP = await callbacks.multiple(Student, {email:email, otp:otp});
-
 			if(validateOTP.length < 1){
 				return res.status(200).json({
 					error:true,
@@ -168,8 +166,6 @@ class RegisterController {
 			});
 		}
 	}
-
-
 
 }
 module.exports = RegisterController;
