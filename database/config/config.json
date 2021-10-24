@@ -18,6 +18,6 @@
     "password": 123456,
     "database": "sma",
     "host": "127.0.0.1",
-    "dialect": "postgres",
+    "dialect": "postgres"
   }
 }
