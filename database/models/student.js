@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Student.hasMany(models.Enrollment, {
         foreignKey: 'student_id',
-        onDelete: 'CASCADE',
+        onDelete: 'CASCADE'
       });
     }
   };
@@ -24,7 +24,8 @@ module.exports = (sequelize, DataTypes) => {
     username: DataTypes.STRING,
     password: DataTypes.STRING,
     dob: DataTypes.STRING,
-    gender: DataTypes.STRING
+    gender: DataTypes.STRING,
+    otp: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Student',

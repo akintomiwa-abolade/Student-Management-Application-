@@ -29,6 +29,9 @@ module.exports = {
       gender: {
         type: Sequelize.STRING
       },
+      otp: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
