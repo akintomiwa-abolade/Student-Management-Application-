@@ -191,4 +191,36 @@ router.post('/enroll/course', authGuard, EnrollmentController.enrollCourse);
 // get all enrolled courses
 router.get('/student/course/enrolled', authGuard, EnrollmentController.courseList);
 
+/**
+ * @swagger
+ * /api/v1/delete/course/{course_id}:
+ *   delete:
+ *     tags:
+ *       - Student Delete Enrolled Course
+ *     name: delete enrolled course
+ *     summary: delete only selected course
+ *     security:
+ *       - bearerAuth: []
+ *     consumes:
+ *       - application/json
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - in: path
+ *         course_id: course_id
+ *         schema:
+ *           type: integer
+ *         required:
+ *           - course_id
+ *     responses:
+ *       200:
+ *         description: Course deleted successfully
+ *       203:
+ *         description: Failed to delete course record
+ *       500:
+ *         description: Internal server error
+ */
+// delete enrolled course
+router.delete('/delete/course/:course_id', authGuard, EnrollmentController.deleteEnrolledCourse);
+
 module.exports = router;

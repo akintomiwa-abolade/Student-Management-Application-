@@ -13,13 +13,15 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Enrollment.belongsTo(models.Student, {
         foreignKey: 'student_id'
-      });
+      })
+      Enrollment.belongsTo(models.Course, {
+        foreignKey: 'student_id'
+      })
     }
   };
   Enrollment.init({
     student_id: DataTypes.INTEGER,
-    course_name: DataTypes.STRING,
-    registration_date: DataTypes.STRING
+    course_id: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Enrollment',

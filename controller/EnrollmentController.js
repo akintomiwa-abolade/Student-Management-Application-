@@ -44,7 +44,7 @@ class EnrollmentController{
 
 			let enrollCourse = {
 				student_id: student_id,
-				course_name: validateCourse[0].dataValues.course_name
+				course_id: course_id
 			}
 
 			Enrollment.create(enrollCourse)
@@ -83,7 +83,13 @@ class EnrollmentController{
 			let student_id = req.decoded.user.id;
 
 			Enrollment.findAll({
+				include:[
+					{
+						model:Course
+					},
+			],
 				where: {student_id: student_id}
+
 			}).then(async (courses)=>{
 				if(courses){
 					let data = [];
@@ -91,7 +97,7 @@ class EnrollmentController{
 						let createdAt = moment(item.createdAt).format('DD/MM/YYYY');
 							var obj = {
 								student_id:item.student_id,
-								course_name:item.course_name,
+								course_name:item.Course.course_name,
 								registration_date:createdAt.toUpperCase()
 							}
 
@@ -123,6 +129,59 @@ class EnrollmentController{
 			});
 		}
 	}
+
+	/**
+	 * delete course enrolled
+	 */
+	static async deleteEnrolledCourse(req, res){
+		try{
+			// validate access
+			let student_id =  req.decoded.user.id;
+				// collect data
+				let course_id = req.params.course_id;
+
+				// validate course id
+				let checkId = await callbacks.multiple(Course, {id:course_id});
+
+				if(checkId.length < 1){
+					return res.status(203).json({
+						error:true,
+						message: 'Invalid Course Supplied.'
+					});
+				}
+
+				// delete organization record
+				Enrollment.destroy({
+					where:{
+						course_id:course_id,
+						student_id: student_id
+					}
+				}).then(async deleted=>{
+					if(deleted){
+						return res.status(200).json({
+							error:false,
+							message:"Course Enrolled deleted successfully."
+						});
+					}else{
+						return res.status(203).json({
+							error:true,
+							message:"Failed to delete Enrolled Course."
+						});
+					}
+				}).catch(err=>{
+					return res.status(203).json({
+						error:true,
+						message:err.message
+					});
+				});
+		}catch(e){
+			return res.status(203).json({
+				error:true,
+				message:e.message
+			});
+		}
+	}
+
 
 }
 
