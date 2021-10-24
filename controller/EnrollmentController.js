@@ -135,11 +135,12 @@ class EnrollmentController{
 	 */
 	static async deleteEnrolledCourse(req, res){
 		try{
+			console.log('I am here- 1');
 			// validate access
 			let student_id =  req.decoded.user.id;
 				// collect data
 				let course_id = req.params.course_id;
-
+				console.log('I am here- 1');
 				// validate course id
 				let checkId = await callbacks.multiple(Course, {id:course_id});
 
@@ -149,6 +150,8 @@ class EnrollmentController{
 						message: 'Invalid Course Supplied.'
 					});
 				}
+
+			console.log('I am here- 2');
 
 				// delete organization record
 				Enrollment.destroy({

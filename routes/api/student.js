@@ -207,7 +207,7 @@ router.get('/student/course/enrolled', authGuard, EnrollmentController.courseLis
  *       - application/json
  *     parameters:
  *       - in: path
- *         course_id: course_id
+ *         name: course_id
  *         schema:
  *           type: integer
  *         required:
