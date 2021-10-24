@@ -9,6 +9,7 @@ const callbacks = require('../function/index.js');
 const Enrollment = require('../database/models/').Enrollment;
 const moment = require('moment');
 const Course = require('../database/models/').Course;
+const formvalidator = require('../middlewares/formvalidator');
 
 require('dotenv').config();
 
@@ -82,12 +83,13 @@ class EnrollmentController{
 			let student_id = req.decoded.user.id;
 
 			Enrollment.findAll({
-				where: {student_id: student_id}
+				where: {student_id: student_id},
+				attributes: ['student_id','course_name','registration_date']
 			}).then(async (courses)=>{
 				if(courses){
 					let data = [];
 					for (let i = 0; i < courses.length; i++) {
-						data[i].dataValues.registration_date = moment(courses[i].createdAt, "YYYY-MM-DD h:mm:ss:a").fromNow();
+						data[i]['registration_date'] = moment(courses[i].createdAt, "YYYY-MM-DD h:mm:ss:a").fromNow();
 						data.push(courses[i].dataValues);
 					}
 					return res.status(200).json({

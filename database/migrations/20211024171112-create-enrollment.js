@@ -11,10 +11,10 @@ module.exports = {
       student_id: {
         type: Sequelize.INTEGER
       },
-      course_id: {
-        type: Sequelize.INTEGER
-      },
       course_name: {
+        type: Sequelize.STRING
+      },
+      registration_date: {
         type: Sequelize.STRING
       },
       createdAt: {

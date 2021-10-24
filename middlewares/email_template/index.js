@@ -220,7 +220,7 @@ exports.verifyOTP = function(otp, currentYear){
 													style="padding-right: 0px;padding-left: 0px;">
 													<!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr style="line-height:0px"><td style="padding-right: 0px;padding-left: 0px;" align="left"><![endif]--><img
 														alt="Image" border="0" class="left fixedwidth"
-														src="https://res.cloudinary.com/https-viscioexpress-com/image/upload/v1620727868/images/VISCIO_EXPRESS_LOGO_2_ppjweh.jpg"
+														src=""
 														style="text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 100%; max-width: 155px; display: block;"
 														title="Image" width="155" />
 													<!--[if mso]></td></tr></table><![endif]-->
@@ -246,7 +246,7 @@ exports.verifyOTP = function(otp, currentYear){
 														style="font-size: 12px; line-height: 1.2; color: #E3E3E3; font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif; mso-line-height-alt: 14px;">
 														<p
 															style="margin: 0; font-size: 12px; line-height: 1.2; text-align: right; word-break: break-word; mso-line-height-alt: 14px; margin-top: 0; margin-bottom: 0;">
-															<span style="font-size: 12px;">Delivery made easy.</span>
+															<span style="font-size: 12px;">Manage Student At Ease.</span>
 														</p>
 													</div>
 												</div>
@@ -490,18 +490,17 @@ exports.verifyOTP = function(otp, currentYear){
 														style="font-size: 12px; line-height: 1.5; color: #838383; font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif; mso-line-height-alt: 18px;">
 														<p
 															style="margin: 0; font-size: 14px; line-height: 1.5; text-align: center; word-break: break-word; mso-line-height-alt: 21px; margin-top: 0; margin-bottom: 0;">
-															<span style="color: #000000; font-size: 14px;"><strong>Viscio
-																	Express Limited</strong></span>
+															<span style="color: #000000; font-size: 14px;"><strong>Student Management Application</strong></span>
 														</p>
 														<p
 															style="margin: 0; font-size: 14px; line-height: 1.5; text-align: center; word-break: break-word; mso-line-height-alt: 21px; margin-top: 0; margin-bottom: 0;">
 															298 Office Address</p>
 														<p
 															style="margin: 0; font-size: 14px; line-height: 1.5; text-align: center; word-break: break-word; mso-line-height-alt: 21px; margin-top: 0; margin-bottom: 0;">
-															<a href="mailto:support@viscioexpress.com"
+															<a href="mailto:support@sma.com"
 																style="text-decoration: underline; color: #0068A5;"
 																target="_self"
-																title="support@viscioexpress.com">support@viscioexpress.com</a>
+																title="support@sma.com">support@sma.com</a>
 														</p>
 													</div>
 												</div>

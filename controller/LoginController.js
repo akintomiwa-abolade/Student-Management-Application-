@@ -48,6 +48,13 @@ class LoginController{
 		 			let passwordIsValid = bcrypt.compareSync(password, user[0].dataValues.password.trim());
 			  		if (passwordIsValid){
 
+						if(user[0].dataValues.otp != null){
+							return res.status(203).json({
+								error:true,
+								message:"Your account has not activated. Contact support."
+							});
+						}
+
 						let studentDetails = {
 							id:user[0].dataValues.id,
 							first_name:user[0].dataValues.first_name,

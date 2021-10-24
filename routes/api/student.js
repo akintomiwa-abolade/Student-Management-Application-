@@ -82,7 +82,7 @@ router.post('/register', RegisterController.registerStudent);
  *             email:
  *               type: string
  *             otp:
- *               type: integer
+ *               type: string
  *         required:
  *           - email
  *           - otp
@@ -141,6 +141,8 @@ router.post('/login', LoginController.loginStudent);
  *       - Student Enroll course
  *     name: student enroll course
  *     summary: Enroll Student course
+ *     security:
+ *       - bearerAuth: []
  *     produces:
  *       - application/json
  *     consumes:
@@ -153,11 +155,8 @@ router.post('/login', LoginController.loginStudent);
  *           properties:
  *             course_id:
  *               type: integer
- *             student_id:
- *               type: integer
  *         required:
  *           - course_id
- *           - student
  *     responses:
  *       '200':
  *         description: Course Successfully Enrolled

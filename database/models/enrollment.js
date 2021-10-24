@@ -18,8 +18,8 @@ module.exports = (sequelize, DataTypes) => {
   };
   Enrollment.init({
     student_id: DataTypes.INTEGER,
-    course_id: DataTypes.INTEGER,
-    course_name: DataTypes.STRING
+    course_name: DataTypes.STRING,
+    registration_date: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Enrollment',
